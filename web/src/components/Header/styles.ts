@@ -10,11 +10,24 @@ export const Container = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+`;
+
+export const HeaderTextContainer = styled.button`
   display: flex;
   align-items: center;
+  justify-items: center;
+  margin-left: 10px;
+  background-color: #764abc;
+  border: 0;
+  width: 150px;
+  height: 100%;
 `;
 
 export const HeaderText = styled.div`
+  margin-left: 10px;
   color: #fff;
   font-size: 20px;
   font-weight: 600;
@@ -23,4 +36,22 @@ export const HeaderText = styled.div`
 export const Input = styled.input`
   margin-left: 10px;
   border-radius: 5px;
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+`;
+
+export const Button = styled.button`
+  background-color: #764abc;
+  border: 0;
+  color: white;
+  margin-right: 10px;
+
+  &:hover {
+    color: #d1d1e0;
+    animation: 0.6s;
+  }
 `;
