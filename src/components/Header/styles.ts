@@ -33,10 +33,12 @@ export const HeaderMinorTextContainer = styled.div`
 `;
 
 export const HeaderText = styled.div`
-  margin-left: 10px;
+  margin-left: 20px;
   color: #fff;
   font-size: 20px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
 `;
 
 export const Input = styled.input`

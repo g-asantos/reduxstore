@@ -17,7 +17,7 @@ import {
 const Header: React.FC = () => {
   const history = useHistory();
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
+
   return (
     <Container>
       <HeaderContainer>
@@ -42,7 +42,11 @@ const Header: React.FC = () => {
           </Button>
         </ButtonContainer>
       </HeaderContainer>
-      <OrderCartModal open={isOpen} onClose={() => setIsOpen(false)} />
+      {isOpen ? (
+        <OrderCartModal open={isOpen} onClose={() => setIsOpen(false)} />
+      ) : (
+        ''
+      )}
     </Container>
   );
 };

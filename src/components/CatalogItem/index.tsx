@@ -2,7 +2,7 @@
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { IProduct } from '../../store/modules/cart/types';
-import { addProductToCartRequest } from '../../store/modules/cart/actions';
+import { addProductToCart } from '../../store/modules/cart/actions';
 import { IState } from '../../store';
 import { Container } from './styles';
 
@@ -18,16 +18,16 @@ const CatalogItem: React.FC<CatalogItemProps> = ({ product }) => {
   });
 
   const handleAddProductToCart = useCallback(() => {
-    dispatch(addProductToCartRequest(product));
+    dispatch(addProductToCart(product));
   }, [dispatch, product]);
 
   return (
     <Container>
       <article>
-        <strong>{product.title}</strong>
+        {/* <strong>{product.title}</strong>
         {' - '}
         <span>{product.price}</span>
-        {'  '}
+        {'  '} */}
         <button type="button" onClick={handleAddProductToCart}>
           Comprar
         </button>

@@ -1,14 +1,15 @@
 // eslint-disable-next-line no-shadow
 export enum ActionTypes {
-  addProductToCartRequest = 'ADD_PRODUCT_TO_CART_REQUEST',
-  addProductToCartSuccess = 'ADD_PRODUCT_TO_CART_SUCCESS',
-  addProductToCartFailure = 'ADD_PRODUCT_TO_CART_FAILURE',
+  addProductToCart = 'ADD_PRODUCT_TO_CART',
+  removeProductFromCart = 'REMOVE_PRODUCT_FROM_CART',
 }
 
 export interface IProduct {
   id: number;
-  title: string;
-  price: number;
+  image: string;
+  name: string;
+  details: string;
+  value: number;
 }
 
 export interface ICartItem {

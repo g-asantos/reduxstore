@@ -1,5 +1,8 @@
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import React, { useCallback } from 'react';
+import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+
+import { addProductToCart } from '../../store/modules/cart/actions';
+import { IProductDetail } from '../../store/modules/details/types';
 
 import {
   BuyButton,
@@ -14,23 +17,30 @@ import {
 } from './styles';
 
 const Details: React.FC = () => {
-  const history = useHistory();
+  const productDetails: IProductDetail = useSelector(
+    (state: RootStateOrAny) => state.details,
+  );
+
+  const dispatch = useDispatch();
+
+  const handleAddProductToCart = useCallback(() => {
+    dispatch(addProductToCart(productDetails));
+  }, [dispatch, productDetails]);
 
   return (
     <Container>
       <ImageContainer>
-        <Image src="https://demo.vercel.store/_next/image?url=https%3A%2F%2Fcdn11.bigcommerce.com%2Fs-qfzerv205w%2Fimages%2Fstencil%2Foriginal%2Fproducts%2F136%2F459%2Fmockup-ae9a83b0__49881.1603746586.png&w=1200&q=85" />
+        <Image src={productDetails.image} />
       </ImageContainer>
       <DetailsTextContainer>
-        <DetailsTextTitle>Cool Clothes</DetailsTextTitle>
-        <DetailsText>
-          This American Apparel hoodie is made out of California fleece which is
-          soft to the touch, and you&#39;ll feel like you&#39;re wearing a soft,
-          fluffy cloud. It&#39;s pre-washed to minimize shrinkage, and
-          breathable yet extra thick for warmth.
-        </DetailsText>
-        <ValueText>R$ 20,00</ValueText>
-        <BuyButton onClick={() => history.push('/cart')}>
+        <DetailsTextTitle>{productDetails.name}</DetailsTextTitle>
+        <DetailsText>{productDetails.details}</DetailsText>
+        <ValueText>
+          R$
+          {productDetails.value}
+          ,00
+        </ValueText>
+        <BuyButton onClick={handleAddProductToCart}>
           <BuyButtonText>ADD TO CART</BuyButtonText>
         </BuyButton>
       </DetailsTextContainer>

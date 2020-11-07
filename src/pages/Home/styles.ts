@@ -18,6 +18,7 @@ export const ImageContainer = styled.button`
   width: 300px;
   height: 300px;
   border: 0;
+  background-color: #f5f6f7;
 
   &:hover ${ImageText} {
     background-color: black;
