@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 /* eslint-disable consistent-return */
 /* eslint-disable no-param-reassign */
 import { Reducer } from 'redux';
@@ -7,11 +8,10 @@ import { ICartState, ActionTypes } from './types';
 
 const INITIAL_STATE: ICartState = {
   items: [],
-  failedStockCheck: [],
 };
 
 const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
-  return produce(state, draft => {
+  return produce(state, (draft: ICartState) => {
     switch (action.type) {
       case ActionTypes.addProductToCart: {
         const { product } = action.payload;

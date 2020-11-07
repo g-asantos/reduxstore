@@ -17,6 +17,7 @@ export function removeProductFromCart(product: IProduct) {
     },
   };
 }
+
 // export function addProductToCartSuccess(product: IProduct) {
 //   return {
 //     type: ActionTypes.addProductToCartSuccess,

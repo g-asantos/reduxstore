@@ -1,10 +1,12 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-return-assign */
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useMemo } from 'react';
 import { FiX } from 'react-icons/fi';
 import { RootStateOrAny, useSelector } from 'react-redux';
-import { useTransition, animated, useSpring } from 'react-spring';
+import { animated, useSpring } from 'react-spring';
+import { ICartState } from '../../store/modules/cart/types';
 import Cart from '../Cart';
-import Catalog from '../Catalog';
 
 import {
   CheckoutButton,
@@ -27,7 +29,25 @@ interface orderCartProps {
 }
 
 const OrderCartModal: React.FC<orderCartProps> = ({ open, onClose }) => {
-  const cart = useSelector((state: RootStateOrAny) => state.cart);
+  const cart: ICartState = useSelector((state: RootStateOrAny) => state.cart);
+
+  const total = useMemo(() => {
+    const valueArray = cart.items.map(
+      item => item.product.value * item.quantity,
+    );
+
+
+    if(valueArray.length === 0){
+      return 0;
+    }
+
+    // eslint-disable-next-line no-param-reassign
+    const totalCount = valueArray.reduce((acc, item) => (acc += item));
+
+
+
+    return totalCount;
+  }, [cart.items]);
 
   const springProps = useSpring({
     opacity: 1,
@@ -40,7 +60,6 @@ const OrderCartModal: React.FC<orderCartProps> = ({ open, onClose }) => {
     },
   });
 
-  console.log(cart);
   return (
     <animated.div style={springProps}>
       <Container>
@@ -59,7 +78,13 @@ const OrderCartModal: React.FC<orderCartProps> = ({ open, onClose }) => {
             <ModalFooterTextContainer>
               <p>
                 Subtotal:
-                <span> R$: 20,00</span>
+                <span>
+                  {' '}
+                  R$
+                  {' '}
+                  {total}
+                  ,00
+                </span>
               </p>
             </ModalFooterTextContainer>
             <ModalFooterButtonContainer>

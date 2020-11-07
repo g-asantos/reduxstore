@@ -51,8 +51,9 @@ export const ModalHeaderText = styled.p``;
 export const ModalContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
+  margin: 20px;
   width: 100vh;
   height: 100vh;
 `;
