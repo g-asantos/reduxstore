@@ -63,3 +63,19 @@ export const Button = styled.button`
     animation: 0.6s;
   }
 `;
+
+export const Counter = styled.span`
+  color: white;
+  width: 16px;
+  height: 16px;
+  background-color: black;
+  border-radius: 50%;
+
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 26px;
+  top: 34px;
+  font-size: 13px;
+  font-weight: 700;
+`;

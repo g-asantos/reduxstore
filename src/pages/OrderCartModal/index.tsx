@@ -51,7 +51,6 @@ const OrderCartModal: React.FC<orderCartProps> = ({ open, onClose }) => {
 
   const springProps = useSpring({
     opacity: 1,
-    reset: open,
     zIndex: 10,
     transform: 'translate(0px, 0px)',
     from: {

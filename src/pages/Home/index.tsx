@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import ProductsArray from '../../lib/collections';
@@ -14,6 +14,8 @@ import CategoryAside from '../../components/CategoryAside';
 import { addDetailRequest } from '../../store/modules/details/actions';
 
 const Home: React.FC = () => {
+  const [products, setProducts] = useState(ProductsArray);
+
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -33,9 +35,9 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <CategoryAside />
+      <CategoryAside setProducts={setProducts} />
       <Container>
-        {ProductsArray.map(product => {
+        {products.map(product => {
           return (
             <ImageContainer onClick={() => sendToDetails(product.id)}>
               <Image src={product.image} />

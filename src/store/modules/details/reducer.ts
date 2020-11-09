@@ -5,7 +5,7 @@ import produce from 'immer';
 
 import { IProductDetail, ActionTypes } from './types';
 
-const details: Reducer = (state = 'aa', action) => {
+const details: Reducer = (state = '', action) => {
   return produce(state, (draft: IProductDetail) => {
     switch (action.type) {
       case ActionTypes.addDetailRequest: {

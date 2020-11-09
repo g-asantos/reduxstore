@@ -10,7 +10,15 @@ export const Container = styled.aside`
 
 export const TextContainer = styled.div``;
 
-export const AsideText = styled.p`
+export const AsideAnchor = styled.button`
   font-size: 18px;
   margin: 20px;
+  border: 0;
+  background: #f5f6f7;
+
+  &:hover {
+    text-decoration: underline;
+    color: #764abc;
+    transition: 0.3s;
+  }
 `;

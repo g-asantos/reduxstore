@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 
-import { FiShoppingCart } from 'react-icons/fi';
+import { FiShoppingBag } from 'react-icons/fi';
 import { SiRedux } from 'react-icons/si';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import OrderCartModal from '../../pages/OrderCartModal';
+import { IState } from '../../store';
+import { ICartItem } from '../../store/modules/cart/types';
 import {
   Container,
   HeaderText,
@@ -12,9 +15,11 @@ import {
   Button,
   HeaderTextContainer,
   HeaderMinorTextContainer,
+  Counter,
 } from './styles';
 
 const Header: React.FC = () => {
+  const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -37,7 +42,8 @@ const Header: React.FC = () => {
 
         <ButtonContainer>
           <Button onClick={() => setIsOpen(state => !state)}>
-            <FiShoppingCart size={26} />
+            <FiShoppingBag size={26} />
+            <Counter>{cart.length}</Counter>
           </Button>
         </ButtonContainer>
       </HeaderContainer>

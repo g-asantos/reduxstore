@@ -1,7 +1,8 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 
 import { addProductToCart } from '../../store/modules/cart/actions';
+
 import { IProductDetail } from '../../store/modules/details/types';
 
 import {
@@ -20,24 +21,38 @@ const Details: React.FC = () => {
   const productDetails: IProductDetail = useSelector(
     (state: RootStateOrAny) => state.details,
   );
+  const [details, setDetails] = useState(productDetails);
+
+  useEffect(() => {
+    const data = localStorage.getItem('reduxStore:details');
+
+    if (data && productDetails.id === undefined) {
+      setDetails(JSON.parse(data));
+    } else {
+      localStorage.setItem(
+        'reduxStore:details',
+        JSON.stringify(productDetails),
+      );
+    }
+  }, [productDetails]);
 
   const dispatch = useDispatch();
 
   const handleAddProductToCart = useCallback(() => {
-    dispatch(addProductToCart(productDetails));
-  }, [dispatch, productDetails]);
+    dispatch(addProductToCart(details));
+  }, [dispatch, details]);
 
   return (
     <Container>
       <ImageContainer>
-        <Image src={productDetails.image} />
+        <Image src={details.image} />
       </ImageContainer>
       <DetailsTextContainer>
-        <DetailsTextTitle>{productDetails.name}</DetailsTextTitle>
-        <DetailsText>{productDetails.details}</DetailsText>
+        <DetailsTextTitle>{details.name}</DetailsTextTitle>
+        <DetailsText>{details.details}</DetailsText>
         <ValueText>
           R$
-          {productDetails.value}
+          {details.value}
           ,00
         </ValueText>
         <BuyButton onClick={handleAddProductToCart}>

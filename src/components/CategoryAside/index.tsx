@@ -1,15 +1,44 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
+import ProductsArray from '../../lib/collections';
 
-import { AsideText, Container, TextContainer } from './styles';
+import { AsideAnchor, Container, TextContainer } from './styles';
 
-const CategoryAside: React.FC = () => {
+interface categoryProps {
+  setProducts: React.ComponentState;
+}
+
+const categories = ProductsArray.map((product) => product.category)
+const uniqueCategories = [...new Set(categories)]
+
+
+
+
+
+// eslint-disable-next-line react/prop-types
+const CategoryAside: React.FC<categoryProps> = ({ setProducts }) => {
+
+
+
+
   return (
     <Container>
       <TextContainer>
-        <AsideText style={{ fontWeight: 700 }}>All Categories</AsideText>
-        <AsideText>Clothing</AsideText>
-        <AsideText>Shoes</AsideText>
-        <AsideText>Acessories</AsideText>
+        <AsideAnchor style={{ fontWeight: 700 }} onClick={() => setProducts(ProductsArray)}>All Categories</AsideAnchor>
+        {uniqueCategories.map(category => (
+          <AsideAnchor
+            onClick={() =>
+              setProducts(
+
+                  ProductsArray.filter(
+                      product => product.category === category,
+                    )
+
+              )}
+          >
+            {category}
+          </AsideAnchor>
+        ))}
       </TextContainer>
     </Container>
   );
