@@ -32,6 +32,12 @@ export const DetailsText = styled.p`
   margin: 20px;
 `;
 
+export const QuantityText = styled.p`
+  font-size: 20px;
+  color: red;
+  margin-bottom: 20px;
+`;
+
 export const ValueText = styled.p`
   font-size: 20px;
   font-weight: 700;

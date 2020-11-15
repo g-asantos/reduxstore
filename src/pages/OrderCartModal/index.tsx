@@ -1,12 +1,13 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-return-assign */
 /* eslint-disable react/prop-types */
-import React, { useMemo } from 'react';
+import React, {  useCallback, useMemo } from 'react';
 import { FiX } from 'react-icons/fi';
 import { RootStateOrAny, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { animated, useSpring } from 'react-spring';
 import { ICartState } from '../../store/modules/cart/types';
-import Cart from '../Cart';
+import Cart from '../../components/Cart';
 
 import {
   CheckoutButton,
@@ -26,14 +27,16 @@ import {
 interface orderCartProps {
   open?: boolean;
   onClose: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const OrderCartModal: React.FC<orderCartProps> = ({ open, onClose }) => {
+const OrderCartModal: React.FC<orderCartProps> = ({ open, onClose, setIsOpen }) => {
   const cart: ICartState = useSelector((state: RootStateOrAny) => state.cart);
+  const history = useHistory();
 
   const total = useMemo(() => {
     const valueArray = cart.items.map(
-      item => item.product.value * item.quantity,
+      item => Number(item.product.value) * Number(item.quantity),
     );
 
 
@@ -47,7 +50,7 @@ const OrderCartModal: React.FC<orderCartProps> = ({ open, onClose }) => {
 
 
     return totalCount;
-  }, [cart.items]);
+  }, [cart]);
 
   const springProps = useSpring({
     opacity: 1,
@@ -58,6 +61,12 @@ const OrderCartModal: React.FC<orderCartProps> = ({ open, onClose }) => {
       transform: 'translateX(-20px, -20px)',
     },
   });
+
+  const goToCheckout = useCallback((e) => {
+    e.preventDefault()
+    setIsOpen(false)
+    history.push('/checkout')
+  }, [history, setIsOpen])
 
   return (
     <animated.div style={springProps}>
@@ -90,7 +99,7 @@ const OrderCartModal: React.FC<orderCartProps> = ({ open, onClose }) => {
               <ContinueButton onClick={onClose}>
                 Continue Shopping
               </ContinueButton>
-              <CheckoutButton>Checkout</CheckoutButton>
+              <CheckoutButton onClick={goToCheckout}>Checkout</CheckoutButton>
             </ModalFooterButtonContainer>
           </ModalFooter>
         </ModalContainer>

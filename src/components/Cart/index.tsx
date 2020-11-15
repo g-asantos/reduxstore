@@ -1,9 +1,10 @@
+/* eslint-disable react/jsx-curly-newline */
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FiPlus, FiMinus } from 'react-icons/fi';
 import { IState } from '../../store';
 import {
-  addProductToCart,
+  addProductToCartRequest,
   removeProductFromCart,
 } from '../../store/modules/cart/actions';
 import { ICartItem } from '../../store/modules/cart/types';
@@ -13,18 +14,31 @@ import {
   Container,
   QuantityText,
   Table,
-  TableContainer,
   TableData,
   TableRow,
 } from './styles';
 
 const Cart: React.FC = () => {
   const cart = useSelector<IState, ICartItem[]>(state => state.cart.items);
+  const failedStock = useSelector<IState, string[]>(
+    state => state.cart.failedStockCheck,
+  );
   const dispatch = useDispatch();
+
+  const hasFailedStockCheck = useCallback(
+    (productId: string) => {
+      return failedStock.includes(productId);
+    },
+    [failedStock],
+  );
+
+  useSelector<IState, boolean>(state => {
+    return state.cart.failedStockCheck.length === 0;
+  });
 
   const handleAddProductToCart = useCallback(
     product => {
-      dispatch(addProductToCart(product));
+      dispatch(addProductToCartRequest(product));
     },
     [dispatch],
   );
@@ -40,14 +54,16 @@ const Cart: React.FC = () => {
     <Container>
       <Table>
         <tbody>
-          {cart.map(item => (
-            <TableContainer>
+          {cart.map(item => {
+            return (
               <TableRow key={item.product.id}>
-                <img
-                  src={item.product.image}
-                  style={{ width: 100, height: 100 }}
-                  alt="something"
-                />
+                <td>
+                  <img
+                    src={item.product.image}
+                    style={{ width: 100, height: 100 }}
+                    alt="something"
+                  />
+                </td>
                 <TableData>
                   {item.product.name}
                   <ButtonContainer>
@@ -67,11 +83,16 @@ const Cart: React.FC = () => {
                   </ButtonContainer>
                 </TableData>
                 <TableData>
-                  {(item.product.value * item.quantity).toFixed(2)}
+                  {(Number(item.product.value) * Number(item.quantity)).toFixed(
+                    2,
+                  )}
                 </TableData>
+                {hasFailedStockCheck(item.product.id) && (
+                  <span style={{ color: 'red' }}>Out of Stock</span>
+                )}
               </TableRow>
-            </TableContainer>
-          ))}
+            );
+          })}
         </tbody>
       </Table>
     </Container>

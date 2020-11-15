@@ -48,7 +48,11 @@ const Header: React.FC = () => {
         </ButtonContainer>
       </HeaderContainer>
       {isOpen ? (
-        <OrderCartModal open={isOpen} onClose={() => setIsOpen(false)} />
+        <OrderCartModal
+          open={isOpen}
+          onClose={() => setIsOpen(false)}
+          setIsOpen={setIsOpen}
+        />
       ) : (
         ''
       )}

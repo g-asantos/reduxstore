@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useCallback, useEffect, useState } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
+import Header from '../../components/Header';
 
-import { addProductToCart } from '../../store/modules/cart/actions';
+import { addProductToCartRequest } from '../../store/modules/cart/actions';
 
 import { IProductDetail } from '../../store/modules/details/types';
 
@@ -14,6 +16,7 @@ import {
   DetailsTextTitle,
   Image,
   ImageContainer,
+  QuantityText,
   ValueText,
 } from './styles';
 
@@ -39,27 +42,31 @@ const Details: React.FC = () => {
   const dispatch = useDispatch();
 
   const handleAddProductToCart = useCallback(() => {
-    dispatch(addProductToCart(details));
+    dispatch(addProductToCartRequest(details));
   }, [dispatch, details]);
 
   return (
-    <Container>
-      <ImageContainer>
-        <Image src={details.image} />
-      </ImageContainer>
-      <DetailsTextContainer>
-        <DetailsTextTitle>{details.name}</DetailsTextTitle>
-        <DetailsText>{details.details}</DetailsText>
-        <ValueText>
-          R$
-          {details.value}
-          ,00
-        </ValueText>
-        <BuyButton onClick={handleAddProductToCart}>
-          <BuyButtonText>ADD TO CART</BuyButtonText>
-        </BuyButton>
-      </DetailsTextContainer>
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <ImageContainer>
+          <Image src={details.image} />
+        </ImageContainer>
+        <DetailsTextContainer>
+          <DetailsTextTitle>{details.name}</DetailsTextTitle>
+          <DetailsText>{details.details}</DetailsText>
+          <QuantityText>{details.quantity}x units left</QuantityText>
+          <ValueText>
+            R$
+            {details.value}
+            ,00
+          </ValueText>
+          <BuyButton onClick={handleAddProductToCart}>
+            <BuyButtonText>ADD TO CART</BuyButtonText>
+          </BuyButton>
+        </DetailsTextContainer>
+      </Container>
+    </>
   );
 };
 

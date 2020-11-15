@@ -7,9 +7,6 @@ export const Table = styled.table``;
 export const TableRow = styled.tr`
   display: flex;
   margin-top: 20px;
-`;
-
-export const TableContainer = styled.div`
   border-bottom: 1px solid #6c757d;
 `;
 

@@ -6,9 +6,10 @@ import { InputContainer, Container } from './styles';
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
   placeholder: string;
+  type: string;
 }
 
-const Input: React.FC<InputProps> = ({ name, placeholder, ...rest }) => {
+const Input: React.FC<InputProps> = ({ name, placeholder, type, ...rest }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { fieldName, defaultValue, registerField } = useField(name);
 
@@ -24,8 +25,11 @@ const Input: React.FC<InputProps> = ({ name, placeholder, ...rest }) => {
     <Container data-testid="input-container">
       <InputContainer
         placeholder={placeholder}
+        type={type}
         defaultValue={defaultValue}
         ref={inputRef}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...rest}
       />
     </Container>
   );

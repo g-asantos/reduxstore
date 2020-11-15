@@ -4,11 +4,12 @@ export enum ActionTypes {
 }
 
 export interface IProductDetail {
-  id: number;
+  id: string;
   image: string;
   name: string;
   details: string;
-  value: number;
+  value: string;
+  quantity: string;
 }
 
 export interface IDetailsState {
