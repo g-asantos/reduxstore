@@ -30,7 +30,7 @@ interface orderCartProps {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const OrderCartModal: React.FC<orderCartProps> = ({ open, onClose, setIsOpen }) => {
+const OrderCartModal: React.FC<orderCartProps> = ({  onClose, setIsOpen }) => {
   const cart: ICartState = useSelector((state: RootStateOrAny) => state.cart);
   const history = useHistory();
 

@@ -15,11 +15,18 @@ export const ThanksContainer = styled.div`
 
   width: 100vh;
   height: 90vh;
+
+  @media (max-width: 689px) {
+    width: 50vh;
+  }
 `;
 
 export const ThanksText = styled.p`
   font-size: 30px;
   margin: 10px 0 10px 0;
+  @media (max-width: 689px) {
+    text-align: center;
+  }
 `;
 
 export const CompleteText = styled.p`
@@ -30,6 +37,10 @@ export const CompleteText = styled.p`
 export const ReferenceText = styled.p`
   color: #a5a5a5;
   margin-bottom: 10px;
+
+  @media (max-width: 689px) {
+    text-align: center;
+  }
 `;
 
 export const GoBackButton = styled.button`

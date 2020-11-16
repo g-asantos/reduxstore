@@ -6,12 +6,32 @@ export const Container = styled.div`
   grid-template-columns: 1fr 0.5fr;
   height: 100vh;
   margin-top: 10vh;
+
+  @media (max-width: 1004px) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 689px) {
+    width: 100vh;
+  }
 `;
 
 export const CartDataContainer = styled.div`
   border: 1px ridge #764abc;
   width: 50vh;
   height: 65vh;
+  @media (max-width: 1004px) {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 689px) {
+    margin-top: 500px;
+    border: 0;
+  }
 `;
 
 export const OrderHeader = styled.h1`
@@ -66,11 +86,20 @@ export const TotalText = styled.p`
 export const Form = styled(Unform)`
   display: grid;
   grid-template-columns: 50vh 50vh;
+
+  @media (max-width: 689px) {
+    grid-template-columns: 50vh;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const CreditCardContainer = styled.div`
   display: grid;
   grid-template-columns: 50vh 50vh;
+  @media (max-width: 689px) {
+    grid-template-columns: 50vh;
+  }
 `;
 
 export const PaymentDetailContainer = styled.div``;
@@ -78,13 +107,27 @@ export const PaymentDetailContainer = styled.div``;
 export const DetailsHeader = styled.h2`
   margin-left: 29px;
   margin-bottom: 20px;
+
+  @media (max-width: 689px) {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const CountrySelectContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export const CountrySelect = styled.select`
   width: 300px;
   height: 40px;
   margin-bottom: 20px;
-  margin-left: 30px;
+  border: 1px solid #d6d6d6;
   font: 16px 'Roboto Slab', serif;
   color: grey;
 `;

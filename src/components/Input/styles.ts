@@ -11,4 +11,5 @@ export const InputContainer = styled.input`
   width: 300px;
   height: 40px;
   margin-bottom: 20px;
+  border: 1px solid #d6d6d6;
 `;

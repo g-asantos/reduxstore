@@ -17,6 +17,11 @@ export const ModalContainer = styled.div`
   background-color: #f5f6f7;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 689px) {
+    width: 100vh;
+    height: 100%;
+  }
 `;
 
 export const DarkContainer = styled.div`
@@ -37,6 +42,10 @@ export const ModalHeader = styled.div`
   border-bottom-width: 1px;
   border-bottom-style: solid;
   padding: 20px;
+
+  @media (max-width: 689px) {
+    visibility: hidden;
+  }
 `;
 
 export const ModalButton = styled.button`
@@ -56,6 +65,12 @@ export const ModalContentContainer = styled.div`
   margin: 20px;
   width: 100vh;
   height: 100vh;
+
+  @media (max-width: 689px) {
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
 `;
 
 export const ModalFooter = styled.div`
@@ -66,6 +81,10 @@ export const ModalFooter = styled.div`
 
   display: grid;
   grid-template-rows: 80px 80px;
+
+  @media (max-width: 689px) {
+    height: 100vh;
+  }
 `;
 
 export const ModalFooterTextContainer = styled.div`
@@ -77,12 +96,23 @@ export const ModalFooterTextContainer = styled.div`
   span {
     color: red;
   }
+  @media (max-width: 689px) {
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
 `;
 
 export const ModalFooterButtonContainer = styled.div`
   display: flex;
   margin-left: 60px;
   margin-top: -20px;
+  @media (max-width: 1700px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const ContinueButton = styled.button`
@@ -93,6 +123,11 @@ export const ContinueButton = styled.button`
   border-color: black;
   border-width: 1px;
   border-style: solid;
+
+  @media (max-width: 1700px) {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
 `;
 
 export const CheckoutButton = styled.button`
@@ -101,4 +136,7 @@ export const CheckoutButton = styled.button`
   background-color: black;
   color: white;
   font-weight: 600;
+
+  @media (max-width: 1700px) {
+  }
 `;

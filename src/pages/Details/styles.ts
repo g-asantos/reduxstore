@@ -3,28 +3,61 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 1700px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
-export const ImageContainer = styled.div``;
+export const ImageContainer = styled.div`
+  padding: 30px;
+  @media (max-width: 1700px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 689px) {
+    width: 100vh;
+    height: 100vh;
+  }
+`;
 
 export const Image = styled.img`
   visibility: visible;
-  height: 100vh;
+  height: 80vh;
   left: 0px;
   top: 0px;
   width: 100%;
   background-color: #e0e0eb;
+  @media (max-width: 1700px) {
+    width: 100vh;
+  }
+
+  @media (max-width: 689px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const DetailsTextContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 689px) {
+    width: 100vh;
+    height: 100vh;
+  }
 `;
 
 export const DetailsTextTitle = styled.h1`
   margin-top: 15%;
   font-weight: 700;
+  @media (max-width: 1700px) {
+    margin-top: 0;
+  }
 `;
 
 export const DetailsText = styled.p`

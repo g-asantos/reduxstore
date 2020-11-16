@@ -6,6 +6,15 @@ export const Container = styled.div`
   grid-template-columns: 320px 320px 320px;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 978px) {
+    grid-template-columns: 320px 320px;
+  }
+
+  @media (max-width: 689px) {
+    grid-template-columns: 320px;
+    width: 100vh;
+  }
 `;
 export const ImageText = styled.p`
   background-color: #f5f6f7;
@@ -29,6 +38,7 @@ export const ImageContainer = styled.button`
 
 export const Image = styled.img`
   width: 100%;
+  height: 100%;
   background-color: #e0e0eb;
 `;
 

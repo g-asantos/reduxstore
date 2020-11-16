@@ -8,7 +8,7 @@ import Header from '../../components/Header';
 import Input from '../../components/Input';
 import { ICartState } from '../../store/modules/cart/types';
 
-import { CartDataContainer, Container, InputDataContainer, ItemContainer, TotalContainer, Form, CreditCardContainer, OrderHeader, TextContainer, TextName, TextCashAndQuantity, TotalHeader, TotalText, DetailsHeader, CountrySelect, PaymentDetailContainer, Button } from './styles';
+import { CartDataContainer, Container, InputDataContainer, ItemContainer, TotalContainer, Form, CreditCardContainer, OrderHeader, TextContainer, TextName, TextCashAndQuantity, TotalHeader, TotalText, DetailsHeader, CountrySelect, PaymentDetailContainer, Button, CountrySelectContainer } from './styles';
 
 interface countryProps{
   name: string;
@@ -59,11 +59,13 @@ const Checkout: React.FC = () => {
           <Form onSubmit={() => history.push('/loading')} id="submit-form">
             <Input name="First Name" placeholder="First Name" type="text" />
             <Input name="Last Name" placeholder="Last Name" type="text"  />
-            <CountrySelect name="Country">
-              {countries.map((country) => (
-                <option key={country.name} value={country.name}>{country.name}</option>
+            <CountrySelectContainer>
+              <CountrySelect name="Country">
+                {countries.map((country) => (
+                  <option key={country.name} value={country.name}>{country.name}</option>
             ))}
-            </CountrySelect>
+              </CountrySelect>
+            </CountrySelectContainer>
             <Input name="City" placeholder="City" type="text" />
             <Input name="State" placeholder="State" type="text" />
             <Input name="Adress" placeholder="Adress" type="text" />
