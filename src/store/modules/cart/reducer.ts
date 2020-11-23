@@ -1,6 +1,3 @@
-/* eslint-disable no-return-assign */
-/* eslint-disable consistent-return */
-/* eslint-disable no-param-reassign */
 import { Reducer } from 'redux';
 import produce from 'immer';
 
@@ -15,6 +12,7 @@ const INITIAL_STATE: ICartState = {
 };
 
 const cart: Reducer<ICartState> = (state = INITIAL_STATE, action) => {
+  // eslint-disable-next-line consistent-return
   return produce(state, (draft: ICartState) => {
     switch (action.type) {
       case ActionTypes.addProductToCartSuccess: {

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-curly-newline */
 import React, { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FiPlus, FiMinus } from 'react-icons/fi';
@@ -61,7 +60,7 @@ const Cart: React.FC = () => {
                   <img
                     src={item.product.image}
                     style={{ width: 100, height: 100 }}
-                    alt="something"
+                    alt={item.product.name}
                   />
                 </td>
                 <TableData>
@@ -88,7 +87,7 @@ const Cart: React.FC = () => {
                   )}
                 </TableData>
                 {hasFailedStockCheck(item.product.id) && (
-                  <span style={{ color: 'red' }}>Out of Stock</span>
+                  <td style={{ color: 'red' }}>Out of Stock</td>
                 )}
               </TableRow>
             );

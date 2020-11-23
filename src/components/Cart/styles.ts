@@ -8,6 +8,10 @@ export const TableRow = styled.tr`
   display: flex;
   margin-top: 20px;
   border-bottom: 1px solid #6c757d;
+
+  @media (max-width: 1048px) {
+    top: 0;
+  }
 `;
 
 export const TableData = styled.td`

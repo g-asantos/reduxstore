@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useCallback, useEffect, useState } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Header';
@@ -50,7 +49,7 @@ const Details: React.FC = () => {
       <Header />
       <Container>
         <ImageContainer>
-          <Image src={details.image} />
+          <Image src={details.image} alt={details.name} />
         </ImageContainer>
         <DetailsTextContainer>
           <DetailsTextTitle>{details.name}</DetailsTextTitle>

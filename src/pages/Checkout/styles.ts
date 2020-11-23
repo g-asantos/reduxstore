@@ -16,6 +16,7 @@ export const Container = styled.div`
 
   @media (max-width: 689px) {
     width: 100vh;
+    margin-top: 200px;
   }
 `;
 
@@ -23,13 +24,16 @@ export const CartDataContainer = styled.div`
   border: 1px ridge #764abc;
   width: 50vh;
   height: 65vh;
+
   @media (max-width: 1004px) {
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin-top: 20vw;
+    margin-bottom: 4vw;
+    border: 0;
   }
 
-  @media (max-width: 689px) {
-    margin-top: 500px;
+  @media (max-width: 670px) {
+    margin-top: 30vw;
+    margin-bottom: 4vw;
     border: 0;
   }
 `;
@@ -76,7 +80,7 @@ export const TotalContainer = styled.div`
 export const TotalHeader = styled.h1`
   font-size: 20px;
   font-weight: 700;
-  margin: 10px 0 10px 0;
+  margin: 40px 0 10px 0;
 `;
 
 export const TotalText = styled.p`

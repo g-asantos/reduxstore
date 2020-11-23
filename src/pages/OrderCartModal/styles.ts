@@ -12,15 +12,14 @@ export const ModalContainer = styled.div`
   left: 100;
   right: 0;
   bottom: 0;
-  width: 85vh;
+  width: 47vw;
   height: 100vh;
   background-color: #f5f6f7;
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 689px) {
-    width: 100vh;
-    height: 100%;
+  @media (max-width: 768px) {
+    width: 100vw;
   }
 `;
 
@@ -42,10 +41,6 @@ export const ModalHeader = styled.div`
   border-bottom-width: 1px;
   border-bottom-style: solid;
   padding: 20px;
-
-  @media (max-width: 689px) {
-    visibility: hidden;
-  }
 `;
 
 export const ModalButton = styled.button`
@@ -65,12 +60,6 @@ export const ModalContentContainer = styled.div`
   margin: 20px;
   width: 100vh;
   height: 100vh;
-
-  @media (max-width: 689px) {
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-  }
 `;
 
 export const ModalFooter = styled.div`
@@ -81,62 +70,41 @@ export const ModalFooter = styled.div`
 
   display: grid;
   grid-template-rows: 80px 80px;
-
-  @media (max-width: 689px) {
-    height: 100vh;
-  }
 `;
 
 export const ModalFooterTextContainer = styled.div`
   display: flex;
-  margin-left: 60px;
+  margin-left: 40px;
   margin-top: 20px;
   color: grey;
 
   span {
     color: red;
   }
-  @media (max-width: 689px) {
-    align-items: center;
-    justify-content: center;
-    margin-top: 0;
-    margin-bottom: 30px;
-  }
 `;
 
 export const ModalFooterButtonContainer = styled.div`
   display: flex;
-  margin-left: 60px;
+  margin-left: 40px;
   margin-top: -20px;
-  @media (max-width: 1700px) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
 `;
 
 export const ContinueButton = styled.button`
   height: 50px;
-  width: 248px;
+  width: 15vw;
+  max-width: 200px;
   font-weight: 600;
   margin-right: 20px;
   border-color: black;
   border-width: 1px;
   border-style: solid;
-
-  @media (max-width: 1700px) {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
 `;
 
 export const CheckoutButton = styled.button`
   height: 50px;
-  width: 248px;
+  width: 15vw;
+  max-width: 200px;
   background-color: black;
   color: white;
   font-weight: 600;
-
-  @media (max-width: 1700px) {
-  }
 `;

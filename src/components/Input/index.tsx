@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { InputHTMLAttributes, useEffect, useRef } from 'react';
 import { useField } from '@unform/core';
 import { InputContainer, Container } from './styles';
@@ -28,7 +27,6 @@ const Input: React.FC<InputProps> = ({ name, placeholder, type, ...rest }) => {
         type={type}
         defaultValue={defaultValue}
         ref={inputRef}
-        // eslint-disable-next-line react/jsx-props-no-spreading
         {...rest}
       />
     </Container>

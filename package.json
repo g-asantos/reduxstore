@@ -55,7 +55,9 @@
     "@types/prismic-dom": "^2.1.1",
     "@types/react-redux": "^7.1.9",
     "@types/react-router-dom": "^5.1.6",
+    "@types/react-test-renderer": "^16.9.3",
     "@types/react-transition-group": "^4.4.0",
+    "@types/redux-mock-store": "^1.0.2",
     "@types/styled-components": "^5.1.4",
     "@types/yup": "^0.29.9",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
@@ -69,6 +71,8 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "react-test-renderer": "^17.0.1",
+    "redux-mock-store": "^1.5.4"
   }
 }

@@ -3,23 +3,23 @@ import styled from 'styled-components';
 export const Container = styled.div`
   background-color: #764abc;
   display: flex;
-  width: 100%;
+
   height: 4rem;
   align-items: center;
   justify-content: center;
   @media (max-width: 689px) {
     display: flex;
     flex-direction: column;
+    width: 100vw;
   }
 
   @media (max-width: 635px) {
-    width: 100vh;
   }
 `;
 
 export const HeaderContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
 
   @media (max-width: 689px) {
@@ -35,11 +35,11 @@ export const HeaderTextContainer = styled.button`
   margin-left: 42%;
   background-color: #764abc;
   border: 0;
-  width: 150px;
-  height: 100%;
+  visibility: hidden;
 
-  @media (max-width: 689px) {
+  @media (max-width: 768px) {
     position: absolute;
+    visibility: visible;
     width: initial;
     height: initial;
     left: 10px;
@@ -71,13 +71,19 @@ export const Input = styled.input`
 `;
 
 export const ButtonContainer = styled.div`
+  position: absolute;
+
+  left: 95%;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
 
-  @media (max-width: 689px) {
-    position: absolute;
-    left: 95vh;
+  @media (max-width: 1298px) {
+    left: 93%;
+  }
+
+  @media (max-width: 650px) {
+    left: 90%;
   }
 `;
 
@@ -104,11 +110,7 @@ export const Counter = styled.span`
   justify-content: center;
   position: absolute;
   right: 26px;
-  top: 34px;
+  top: 20px;
   font-size: 13px;
   font-weight: 700;
-
-  @media (max-width: 689px) {
-    top: 20px;
-  }
 `;

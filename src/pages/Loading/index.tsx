@@ -16,6 +16,7 @@ const Loading: React.FC = () => {
       renderer: 'svg',
       loop: true,
       autoplay: true,
+
       // eslint-disable-next-line global-require
       animationData: require('../../assets/35679-click-to-buy-basket.json'),
     });

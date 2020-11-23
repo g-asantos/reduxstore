@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 
 import {
@@ -22,8 +21,7 @@ const About: React.FC = () => {
             This is a project created by Guilherme Azevedo dos Santos, with the
             intent to further my knowledge about Redux and Redux Saga. It was
             built using ReactJS, Redux, Redux-Saga, Styled Components and
-            Prismic. To check it in more detail, go
-            {' '}
+            Prismic. To check it in more detail, go{' '}
             <a href="https://github.com/g-asantos/reduxstore">here</a>
           </AboutText>
         </TextContainer>

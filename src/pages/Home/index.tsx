@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React, { useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -74,7 +73,10 @@ const Home: React.FC = () => {
               key={product.id}
               onClick={() => sendToDetails(product.id)}
             >
-              <Image src={product.data.image.url} />
+              <Image
+                src={product.data.image.url}
+                alt={product.data.title.text}
+              />
               <ImageTextContainer>
                 <ImageText>{product.data.title.text}</ImageText>
                 <ImageText>

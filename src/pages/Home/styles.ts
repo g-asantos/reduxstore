@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100%;
   display: grid;
   grid-template-columns: 320px 320px 320px;
   align-items: center;
@@ -13,7 +12,6 @@ export const Container = styled.div`
 
   @media (max-width: 689px) {
     grid-template-columns: 320px;
-    width: 100vh;
   }
 `;
 export const ImageText = styled.p`
@@ -23,7 +21,7 @@ export const ImageText = styled.p`
 
 export const ImageContainer = styled.button`
   position: relative;
-  margin: 20px 10px 10px 10px;
+  margin: 20px 10px 10px;
   width: 300px;
   height: 300px;
   border: 0;

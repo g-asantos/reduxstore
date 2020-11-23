@@ -1,7 +1,4 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-return-assign */
-/* eslint-disable react/prop-types */
-import React, {  useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { FiX } from 'react-icons/fi';
 import { RootStateOrAny, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -27,10 +24,10 @@ import {
 interface orderCartProps {
   open?: boolean;
   onClose: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const OrderCartModal: React.FC<orderCartProps> = ({  onClose, setIsOpen }) => {
+const OrderCartModal: React.FC<orderCartProps> = ({ onClose, setIsOpen }) => {
   const cart: ICartState = useSelector((state: RootStateOrAny) => state.cart);
   const history = useHistory();
 
@@ -39,15 +36,11 @@ const OrderCartModal: React.FC<orderCartProps> = ({  onClose, setIsOpen }) => {
       item => Number(item.product.value) * Number(item.quantity),
     );
 
-
-    if(valueArray.length === 0){
+    if (valueArray.length === 0) {
       return 0;
     }
 
-    // eslint-disable-next-line no-param-reassign
     const totalCount = valueArray.reduce((acc, item) => (acc += item));
-
-
 
     return totalCount;
   }, [cart]);
@@ -62,11 +55,19 @@ const OrderCartModal: React.FC<orderCartProps> = ({  onClose, setIsOpen }) => {
     },
   });
 
-  const goToCheckout = useCallback((e) => {
-    e.preventDefault()
-    setIsOpen(false)
-    history.push('/checkout')
-  }, [history, setIsOpen])
+  const goToCheckout = useCallback(
+    e => {
+      e.preventDefault();
+
+      if (cart.items.length === 0) {
+        return;
+      }
+
+      setIsOpen(false);
+      history.push('/checkout');
+    },
+    [history, setIsOpen, cart.items.length],
+  );
 
   return (
     <animated.div style={springProps}>
@@ -88,9 +89,7 @@ const OrderCartModal: React.FC<orderCartProps> = ({  onClose, setIsOpen }) => {
                 Subtotal:
                 <span>
                   {' '}
-                  R$
-                  {' '}
-                  {total}
+                  R$ {total}
                   ,00
                 </span>
               </p>

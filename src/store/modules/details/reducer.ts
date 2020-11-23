@@ -1,5 +1,3 @@
-/* eslint-disable consistent-return */
-/* eslint-disable no-param-reassign */
 import { Reducer } from 'redux';
 import produce from 'immer';
 

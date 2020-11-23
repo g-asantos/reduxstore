@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @media (max-width: 1700px) {
+  @media (max-width: 1208px) {
     display: flex;
     flex-direction: column;
   }
@@ -26,7 +26,6 @@ export const ImageContainer = styled.div`
 
 export const Image = styled.img`
   visibility: visible;
-  height: 80vh;
   left: 0px;
   top: 0px;
   width: 100%;
@@ -55,7 +54,7 @@ export const DetailsTextContainer = styled.div`
 export const DetailsTextTitle = styled.h1`
   margin-top: 15%;
   font-weight: 700;
-  @media (max-width: 1700px) {
+  @media (max-width: 1208px) {
     margin-top: 0;
   }
 `;
