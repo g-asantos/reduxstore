@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useCallback, useEffect, useState } from 'react';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Header';
@@ -60,7 +61,10 @@ const Details: React.FC = () => {
             {details.value}
             ,00
           </ValueText>
-          <BuyButton onClick={handleAddProductToCart}>
+          <BuyButton
+            itemID="buy_test"
+            onClick={handleAddProductToCart}
+          >
             <BuyButtonText>ADD TO CART</BuyButtonText>
           </BuyButton>
         </DetailsTextContainer>

@@ -49,6 +49,7 @@ const CategoryAside: React.FC<categoryProps> = ({ setProducts, products }) => {
         </AsideAnchor>
         {categories.map(category => (
           <AsideAnchor
+            itemID={category}
             key={category}
             onClick={() =>
               setProducts(

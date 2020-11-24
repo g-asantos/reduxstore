@@ -1,5 +1,8 @@
 {
   "name": "reduxstore",
+  "jest": {
+    "clearMocks": true
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {

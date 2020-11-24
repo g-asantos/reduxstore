@@ -48,7 +48,6 @@ const Cart: React.FC = () => {
     },
     [dispatch],
   );
-
   return (
     <Container>
       <Table>
@@ -67,6 +66,7 @@ const Cart: React.FC = () => {
                   {item.product.name}
                   <ButtonContainer>
                     <Button
+                      itemID="add_test"
                       type="button"
                       onClick={() => handleAddProductToCart(item.product)}
                     >
@@ -74,6 +74,7 @@ const Cart: React.FC = () => {
                     </Button>
                     <QuantityText>{item.quantity}</QuantityText>
                     <Button
+                      itemID="remove_test"
                       type="button"
                       onClick={() => handleRemoveProductFromCart(item.product)}
                     >

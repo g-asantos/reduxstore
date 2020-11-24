@@ -5,13 +5,14 @@ import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { Store, AnyAction } from 'redux';
 import configureStore from 'redux-mock-store';
-import Home from '../../pages/Home';
+import Details from '../../pages/Details'
 
 const mockStore = configureStore([]);
 
 
 
-describe('Home Page', () => {
+
+describe('Details', () => {
   let store: Store<any, AnyAction>;
   let component: any;
 
@@ -24,16 +25,25 @@ describe('Home Page', () => {
       details: [],
     });
 
+    store.dispatch = jest.fn()
+
     component = renderer.create(
       <Provider store={store}>
         <BrowserRouter>
-          <Home />
+          <Details />
         </BrowserRouter>
       </Provider>
     );
   });
 
-  it('should render with given state from Redux Store', () => {
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-});
+  it('should dispatch an action on button click', () => {
+
+    const buyButton = component.root.findByProps({itemID: 'buy_test'})
+    renderer.act(() => {
+      buyButton.props.onClick();
+    });
+
+    expect(store.dispatch).toHaveBeenCalledTimes(1)
+  })
+
+})
