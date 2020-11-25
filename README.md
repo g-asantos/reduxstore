@@ -28,7 +28,7 @@ yarn start
 
 ### Visit the site:
 
-Go to
+Go to https://reduxstore.vercel.app/
 
 
 ### Unfinished features:
