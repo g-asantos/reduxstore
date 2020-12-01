@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { Store, AnyAction } from 'redux';
 import configureStore from 'redux-mock-store';
-import Details from '../../pages/Details'
+import Details from '../../../pages/Details'
 
 const mockStore = configureStore([]);
 

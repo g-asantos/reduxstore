@@ -45,9 +45,10 @@ export const ModalHeader = styled.div`
 
 export const ModalButton = styled.button`
   border: 0;
+  padding-top: 1px;
   background-color: inherit;
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
 `;
 
 export const ModalHeaderText = styled.p``;
@@ -91,7 +92,7 @@ export const ModalFooterButtonContainer = styled.div`
 
 export const ContinueButton = styled.button`
   height: 50px;
-  width: 15vw;
+  min-width: 15vw;
   max-width: 200px;
   font-weight: 600;
   margin-right: 20px;
@@ -102,7 +103,7 @@ export const ContinueButton = styled.button`
 
 export const CheckoutButton = styled.button`
   height: 50px;
-  width: 15vw;
+  min-width: 15vw;
   max-width: 200px;
   background-color: black;
   color: white;

@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import CategoryAside from '../../components/CategoryAside'
+import CategoryAside from '../../../components/CategoryAside'
 
 
 

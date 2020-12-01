@@ -1,18 +1,20 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import { Store, AnyAction } from 'redux';
 import configureStore from 'redux-mock-store';
-import Home from '../../pages/Home';
+
+import Confirm from '../../../pages/Confirm';
 
 const mockStore = configureStore([]);
 
+/// random number every time so the snapshot changes
 
+jest.mock('crypto');
 
-describe('Home Page', () => {
-  let store: Store<any, AnyAction>;
+describe('Confirm page', () => {
+  let store;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let component: any;
 
   beforeEach(() => {
@@ -21,19 +23,20 @@ describe('Home Page', () => {
         items: [],
         failedStockCheck: [],
       },
-      details: [],
+      details: '',
     });
 
     component = renderer.create(
       <Provider store={store}>
         <BrowserRouter>
-          <Home />
+          <Confirm />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
   });
 
-  it('should render with given state from Redux Store', () => {
-    expect(component.toJSON()).toMatchSnapshot();
+  test('snapshot renders', () => {
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

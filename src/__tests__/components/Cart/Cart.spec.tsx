@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { Store, AnyAction } from 'redux';
 import configureStore from 'redux-mock-store';
-import Cart from '../../components/Cart'
+import Cart from '../../../components/Cart'
 
 const mockStore = configureStore([]);
 

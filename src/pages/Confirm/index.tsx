@@ -16,7 +16,7 @@ import {
 const Confirm: React.FC = () => {
   const history = useHistory();
 
-  const orderNumber = crypto.randomBytes(10).toString('hex');
+  const orderNumber = crypto.randomBytes(10)?.toString('hex');
 
   const iconStyle = {
     color: 'white',

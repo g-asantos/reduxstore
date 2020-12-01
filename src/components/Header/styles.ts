@@ -3,25 +3,20 @@ import styled from 'styled-components';
 export const Container = styled.div`
   background-color: #764abc;
   display: flex;
-
+  width: 100vw;
   height: 4rem;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   @media (max-width: 689px) {
     display: flex;
     flex-direction: column;
-    width: 100vw;
-  }
-
-  @media (max-width: 635px) {
+    justify-content: center;
   }
 `;
 
 export const HeaderContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-
+  display: flex;
+  width: 98vw;
   @media (max-width: 689px) {
     display: flex;
   }
@@ -32,7 +27,6 @@ export const HeaderTextContainer = styled.button`
   align-items: center;
   align-self: center;
   justify-items: center;
-  margin-left: 42%;
   background-color: #764abc;
   border: 0;
   visibility: hidden;
@@ -65,26 +59,9 @@ export const HeaderText = styled.div`
   align-items: center;
 `;
 
-export const Input = styled.input`
-  margin-left: 10px;
-  border-radius: 5px;
-`;
-
 export const ButtonContainer = styled.div`
-  position: absolute;
-
-  left: 95%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-
-  @media (max-width: 1298px) {
-    left: 93%;
-  }
-
-  @media (max-width: 650px) {
-    left: 90%;
-  }
+  position: relative;
+  margin-left: auto;
 `;
 
 export const Button = styled.button`
@@ -105,12 +82,10 @@ export const Counter = styled.span`
   height: 16px;
   background-color: black;
   border-radius: 50%;
-
-  align-items: center;
-  justify-content: center;
   position: absolute;
-  right: 26px;
-  top: 20px;
+  right: 0.3rem;
+  top: 1.2rem;
+
   font-size: 13px;
   font-weight: 700;
 `;

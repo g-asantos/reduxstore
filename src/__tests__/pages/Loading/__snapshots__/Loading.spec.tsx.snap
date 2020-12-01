@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading page snapshot renders 1`] = `
+<div
+  className="sc-bdnylx VPFCP"
+>
+  <p
+    className="sc-dlnjPT eThZXH"
+  >
+    Your Order is processing...
+  </p>
+  <div
+    className="sc-gtssRu VarYa"
+    id="animation"
+  />
+</div>
+`;

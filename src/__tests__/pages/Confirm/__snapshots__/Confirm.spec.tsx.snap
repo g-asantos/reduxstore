@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Page should render with given state from Redux Store 1`] = `
+exports[`Confirm page snapshot renders 1`] = `
 Array [
   <div
-    className="sc-bCwgka dIBQqJ"
+    className="sc-fFSRdu bfsPGe"
   >
     <div
-      className="sc-iwaifL dLXDcs"
+      className="sc-bkbjAj edjvYt"
     >
       <div
-        className="sc-lmgQde ktCLWC"
+        className="sc-dIvqjp bOtYUs"
       >
         <a
           href="/"
@@ -22,7 +22,7 @@ Array [
           }
         >
           <div
-            className="sc-iJCRLp dDoYBC"
+            className="sc-hHEjAm fJzmJz"
           >
             Shop
           </div>
@@ -38,14 +38,14 @@ Array [
           }
         >
           <div
-            className="sc-iJCRLp dDoYBC"
+            className="sc-hHEjAm fJzmJz"
           >
             About
           </div>
         </a>
       </div>
       <button
-        className="sc-cxNIbT bFpyfD"
+        className="sc-iemXMA hBoJNI"
       >
         <a
           href="/"
@@ -79,17 +79,17 @@ Array [
             />
           </svg>
           <div
-            className="sc-iJCRLp dDoYBC"
+            className="sc-hHEjAm fJzmJz"
           >
             ReduxStore
           </div>
         </a>
       </button>
       <div
-        className="sc-ezzayL euuOEY"
+        className="sc-dlMBXb bsljLo"
       >
         <button
-          className="sc-bYwzba iOcvOu"
+          className="sc-kfYqjs fUegAf"
           onClick={[Function]}
         >
           <svg
@@ -123,7 +123,7 @@ Array [
             />
           </svg>
           <span
-            className="sc-kLokih dBfulT"
+            className="sc-fKgIGh eueaT"
           >
             0
           </span>
@@ -132,27 +132,60 @@ Array [
     </div>
     
   </div>,
-  <aside
-    className="sc-jSFkmK fukQJG"
+  <div
+    className="sc-bCwgka boOwRk"
   >
     <div
-      className="sc-gKAblj dRVNLK"
+      className="sc-iwaifL icOCfR"
     >
-      <button
-        className="sc-iCoHVE gFlsEp"
-        onClick={[Function]}
+      <svg
+        fill="none"
+        height={30}
+        size={30}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
         style={
           Object {
-            "fontWeight": 700,
+            "backgroundColor": "green",
+            "borderRadius": 50,
+            "color": "white",
+            "height": 80,
+            "width": 80,
           }
         }
+        viewBox="0 0 24 24"
+        width={30}
+        xmlns="http://www.w3.org/2000/svg"
       >
-        All Categories
+        <polyline
+          points="20 6 9 17 4 12"
+        />
+      </svg>
+      <p
+        className="sc-cxNIbT cKkQjH"
+      >
+        Thank you for your purchase!
+      </p>
+      <p
+        className="sc-lmgQde iXEZDl"
+      >
+        Your order completed sucessfully
+      </p>
+      <p
+        className="sc-iJCRLp QdUik"
+      >
+        Here is you order number for reference: 
+      </p>
+      <button
+        className="sc-giAqnE hiEMSo"
+        onClick={[Function]}
+        type="button"
+      >
+        Go back home
       </button>
     </div>
-  </aside>,
-  <div
-    className="sc-bdnylx fTvwWY"
-  />,
+  </div>,
 ]
 `;

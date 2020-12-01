@@ -152,4 +152,9 @@ export const Button = styled.button`
     background-color: #fff;
     transition: 0.6s;
   }
+
+  @media (max-width: 689px) {
+    margin-left: 0;
+    width: 50vh;
+  }
 `;

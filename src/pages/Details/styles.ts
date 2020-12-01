@@ -17,11 +17,6 @@ export const ImageContainer = styled.div`
     align-items: center;
     justify-content: center;
   }
-
-  @media (max-width: 689px) {
-    width: 100vh;
-    height: 100vh;
-  }
 `;
 
 export const Image = styled.img`
@@ -44,11 +39,6 @@ export const DetailsTextContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-
-  @media (max-width: 689px) {
-    width: 100vh;
-    height: 100vh;
-  }
 `;
 
 export const DetailsTextTitle = styled.h1`
